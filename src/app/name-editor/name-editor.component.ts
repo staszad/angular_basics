@@ -13,4 +13,7 @@ export class NameEditorComponent {
       this.name.value + this.name.value[this.name.value.length % 3]
     );
   }
+  reset() {
+    this.name.reset();
+  }
 }

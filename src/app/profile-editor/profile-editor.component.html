@@ -1,0 +1,26 @@
+<p>Can you please tell me full name of any known to you war criminal?</p>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <p>
+    <label for="firstName">First name: </label>
+    <input type="text" id="firstName" formControlName="firstName" />
+  </p>
+  <p>
+    <label for="lastName">Last name: </label>
+    <input type="text" id="lastName" formControlName="lastName" />
+  </p>
+  <p
+    style="background-color: red; border: black 1px solid; max-width: 20%"
+    [hidden]="profileForm.valid"
+  >
+    You have to fill all fields you moron
+  </p>
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
+<p>
+  Are you absolutely sure that this is
+  {{
+    profileForm.controls["firstName"].value +
+      " " +
+      profileForm.controls["lastName"].value
+  }}?
+</p>
