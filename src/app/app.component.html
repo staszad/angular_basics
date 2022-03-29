@@ -16,6 +16,7 @@
 <input [(ngModel)]="title" />
 <p>Adolf Hitler once said: "{{ title }}"</p>
 
+<hr />
 <h2>Conditionals in angular</h2>
 <div *ngIf="number > 7; else smaller">{{ number }} is bigger than 7</div>
 <ng-template #smaller> {{ number }} is not bigger than 7 </ng-template>
@@ -27,3 +28,51 @@
 ></div>
 <ng-template #isDivTempl> Yes it absolutely is </ng-template>
 <ng-template #isNotDivTempl> No it isn't, you stupid schmock </ng-template>
+
+<hr />
+<h2>*ngFor loop</h2>
+<ul>
+  <li *ngFor="let number of [2, 1, 3, 7, 4, 2, 0, 6, 9]">{{ number }}</li>
+</ul>
+<ul>
+  <li *ngFor="let number of [2, 1, 3, 7, 4, 2, 0, 6, 9]; let i = index">
+    [{{ i }}] {{ number }}
+  </li>
+</ul>
+
+<div *ngFor="let number of [0, 6, 7, 8]; let i = index; let isEven = even">
+  [{{ i }}] {{ number }}
+  <span *ngIf="isEven">(even)</span>
+</div>
+
+<p>
+  licznik w pętli
+  <li *ngFor="let number of counter(10); let i = index">{{ i }}</li>
+  <!-- we created an empty array with length of 10 and then read every index in it -->
+</p>
+
+<div>
+  funny grid of given size
+  <table border="1">
+    <tbody>
+      <tr *ngFor="let rows of counter(6); let row = index">
+        <td *ngFor="let columns of counter(9); let column = index">
+          {{ (row + 1) * (column + 1) }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<hr />
+<h2>NgSwitch</h2>
+
+<div [ngSwitch]="group">
+  <p *ngSwitchCase="'nazi'">Heil!</p>
+  <p *ngSwitchCase="'communist'">Привет товарищи!</p>
+  <p *ngSwitchCase="'narodowcy'">Chwała wielkiej Polsce!</p>
+  <p *ngSwitchDefault>Welcome strangers</p>
+</div>
+
+<hr />
+<h2>NgForm</h2>

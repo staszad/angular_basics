@@ -27,4 +27,9 @@ export class AppComponent {
   isDividable(num: number, divisor: number) {
     return !(num % divisor);
   }
+
+  counter(i: number) {
+    return new Array(i);
+  }
+  group = 'narodowcy';
 }
