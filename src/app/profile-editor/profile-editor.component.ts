@@ -14,7 +14,7 @@ import {
 export class ProfileEditorComponent {
   profileForm = new FormGroup({
     firstName: new FormControl('', Validators.required),
-    lastName: new FormControl('Hit'),
+    lastName: this.fb.control('Hit'),
     address: this.fb.group({
       street: [''],
       city: [''],
@@ -24,6 +24,9 @@ export class ProfileEditorComponent {
   });
   onSubmit() {
     console.log(this.profileForm);
+  }
+  reset() {
+    this.profileForm.reset();
   }
   constructor(private fb: FormBuilder) {}
 }
