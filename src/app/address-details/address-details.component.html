@@ -1,0 +1,51 @@
+<form [formGroup]="addressForm">
+  <div class="panel">
+    <div class="row">
+      <label for="house">House: </label>
+      <input class="w-25" type="text" id="house" formControlName="house" />
+      <label for="suffix" class="suffix">Suffix: </label>
+      <input class="w-25" type="text" id="suffix" formControlName="suffix" />
+    </div>
+    <div class="row">
+      <label for="houseName">House name: </label>
+      <input type="text" id="houseName" formControlName="houseName" />
+    </div>
+    <div class="row">
+      <label for="streetAddress">Street address: </label>
+      <input type="text" id="streetAddress" formControlName="streetAddress" />
+    </div>
+    <div class="row">
+      <label for="streetAddress1"></label>
+      <input type="text" id="streetAddress1" formControlName="streetAddress1" />
+    </div>
+    <div class="row">
+      <label for="city">Town/City: </label>
+      <input type="text" id="city" formControlName="city" />
+    </div>
+    <div class="row">
+      <label for="county">County: </label>
+      <input type="text" id="county" formControlName="county" />
+    </div>
+    <div class="row">
+      <label for="postcode">Postcode: </label>
+      <input type="text" id="postcode" formControlName="postcode" />
+    </div>
+    <div class="row">
+      <p>
+        Description of location or a grid reference (must be completed if
+        postcode is not known):
+      </p>
+    </div>
+    <div class="row">
+      <label for="easting">Easting: </label>
+      <input type="text" id="easting" formControlName="easting" />
+    </div>
+    <div class="row">
+      <label for="northing">Northing: </label>
+      <input type="text" id="northing" formControlName="northing" />
+    </div>
+  </div>
+  <div class="panel">
+    <textarea id="description" fromControlName="description"></textarea>
+  </div>
+</form>

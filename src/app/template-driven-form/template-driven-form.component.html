@@ -1,1 +1,50 @@
-Favourite colour: <input type="text" [(ngModel)]="favColour" />
+<style>
+  #colourBox {
+    width: 200px;
+    height: 200px;
+  }
+</style>
+<h3>Create <strong>YOUR</strong> colour</h3>
+<form #colorForm="ngForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+  <label for="red">Red:</label>
+  <input
+    type="number"
+    id="red"
+    name="red"
+    min="0"
+    max="255"
+    (change)="onSubmit()"
+    [(ngModel)]="model.red"
+    #red="ngModel"
+  />
+  <label for="green">Green:</label>
+  <input
+    type="number"
+    id="green"
+    name="green"
+    min="0"
+    max="255"
+    (change)="onSubmit()"
+    [(ngModel)]="model.green"
+    #green="ngModel"
+  />
+  <label for="blue">Blue:</label>
+  <input
+    type="number"
+    id="blue"
+    name="blue"
+    min="0"
+    max="255"
+    (change)="onSubmit()"
+    [(ngModel)]="model.blue"
+    #red="ngModel"
+  />
+</form>
+{{ model.red }} {{ model.green }} {{ model.blue }}
+<div
+  id="colourBox"
+  [ngStyle]="{
+    'background-color':
+      'rgb(' + model.red + ',' + model.green + ',' + model.blue + ')'
+  }"
+></div>

@@ -1,0 +1,113 @@
+<form #f="ngForm" ngNativeValidate>
+  <div class="panel">
+    <div class="row">
+      <label for="house">House: </label>
+      <input
+        class="w-25"
+        type="text"
+        id="house"
+        name="house"
+        #house="ngModel"
+        [(ngModel)]="address.house"
+      />
+      <label for="suffix" class="suffix">Suffix: </label>
+      <input
+        class="w-25"
+        type="text"
+        id="suffix"
+        name="suffix"
+        #suffix="ngModel"
+        [(ngModel)]="address.suffix"
+      />
+    </div>
+    <div class="row">
+      <label for="houseName">House name: </label>
+      <input
+        type="text"
+        id="houseName"
+        name="houseName"
+        #houseName="ngModel"
+        [(ngModel)]="address.houseName"
+      />
+    </div>
+    <div class="row">
+      <label for="streetAddress">Street address: </label>
+      <input
+        type="text"
+        id="streetAddress"
+        name="streetAddress"
+        #streetAddress="ngModel"
+        [(ngModel)]="address.streetAddress"
+      />
+    </div>
+    <div class="row">
+      <label for="streetAddress1"></label>
+      <input
+        type="text"
+        id="streetAddress1"
+        name="streetAddress1"
+        #streetAddress1="ngModel"
+        [(ngModel)]="address.streetAddress1"
+      />
+    </div>
+    <div class="row">
+      <label for="city">Town/City: </label>
+      <input type="text" id="city" #city="ngModel" [(ngModel)]="address.city" />
+    </div>
+    <div class="row">
+      <label for="county">County: </label>
+      <input
+        type="text"
+        id="county"
+        name="county"
+        #county="ngModel"
+        [(ngModel)]="address.county"
+      />
+    </div>
+    <div class="row">
+      <label for="postcode">Postcode: </label>
+      <input
+        type="text"
+        id="postcode"
+        name="postcode"
+        #postcode="ngModel"
+        [(ngModel)]="address.postcode"
+      />
+    </div>
+    <div class="row">
+      <p>
+        Description of location or a grid reference (must be completed if
+        postcode is not known):
+      </p>
+    </div>
+    <div class="row">
+      <label for="easting">Easting: </label>
+      <input
+        type="text"
+        id="easting"
+        name="easting"
+        #easting="ngModel"
+        [(ngModel)]="address.easting"
+      />
+    </div>
+    <div class="row">
+      <label for="northing">Northing: </label>
+      <input
+        type="text"
+        id="northing"
+        name="northing"
+        #northing="ngModel"
+        [(ngModel)]="address.northing"
+      />
+    </div>
+  </div>
+  <div class="panel">
+    <textarea
+      id="description"
+      name="description"
+      #description="ngModel"
+      [(ngModel)]="address.description"
+    ></textarea>
+  </div>
+</form>
+So your full street is {{ address.streetAddress }} {{ address.streetAddress1 }}?
